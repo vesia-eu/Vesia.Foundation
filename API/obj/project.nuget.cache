@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "bzT5qqLbVNk=",
+  "dgSpecHash": "xgAX5WNu/Hg=",
   "success": true,
   "projectFilePath": "/Users/oliverrasmussen/Documents/Venly/Venly.Foundation/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/oliverrasmussen/.nuget/packages/microsoft.aspnetcore.openapi/10.0.7/microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512",
-    "/Users/oliverrasmussen/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
-    "/Users/oliverrasmussen/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
+    "/Users/oliverrasmussen/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
   ],
   "logs": []
 }
