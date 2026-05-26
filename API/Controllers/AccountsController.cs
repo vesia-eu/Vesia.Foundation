@@ -9,7 +9,7 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AccountsController(IDispatcher dispatcher) : ControllerBase
+public class AccountsController(IDispatcher dispatcher) : BaseController
 {
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -20,13 +20,25 @@ public class AccountsController(IDispatcher dispatcher) : ControllerBase
 
         var result = await dispatcher.DispatchAsync(query, cancellationToken);
 
-        return result.IsSuccess
-            ? Ok(result.Value)
-            : Problem(statusCode: 500, detail: result.Error);
+        return HandleResult(result);
+    }
+    
+    [HttpGet("{accountGuid:guid}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetAccountByUidAsync([FromRoute] Guid accountGuid, CancellationToken cancellationToken)
+    {
+        var query = new GetAccountByUidQuery(accountGuid);
+
+        var result = await dispatcher.DispatchAsync(query, cancellationToken);
+
+        return HandleResult(result);
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> CreateAccountAsync([FromBody] CreateAccountRequest request, CancellationToken cancellationToken)
     {
@@ -34,8 +46,6 @@ public class AccountsController(IDispatcher dispatcher) : ControllerBase
 
         var result = await dispatcher.DispatchAsync(command, cancellationToken);
 
-        return result.IsSuccess
-            ? CreatedAtAction(nameof(GetAllAccountsAsync), new { id = result.Value }, result.Value)
-            : Problem(statusCode: 500, detail: result.Error);
+        return HandleCreatedResult(result, nameof(GetAccountByUidAsync), new { accountGuid = result.Value });
     }
 }

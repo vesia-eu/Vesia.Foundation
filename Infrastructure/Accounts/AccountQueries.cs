@@ -14,12 +14,29 @@ internal class AccountQueries(IDbContextFactory<ApplicationDbContext> contextFac
         return await context.Accounts
             .AsNoTracking()
             .Select(a => new AccountDTO(
-                a.Id.Value,
+                a.Id,
                 a.AccountName,
                 a.Email,
                 a.FirstName,
                 a.LastName,
                 a.ValidTo))
             .ToListAsync(cancellationToken);
+    }
+
+    public async Task<AccountDTO?> GetAccountByUid(Guid uid, CancellationToken cancellationToken)
+    {
+        await using var context = await contextFactory.CreateDbContextAsync(cancellationToken);
+
+        return await context.Accounts
+            .AsNoTracking()
+            .Where(a => a.Id == uid)
+            .Select(a => new AccountDTO(
+                a.Id.Value,
+                a.AccountName,
+                a.Email,
+                a.FirstName,
+                a.LastName,
+                a.ValidTo))
+            .FirstOrDefaultAsync(cancellationToken);
     }
 }

@@ -1,3 +1,4 @@
+using API.Extensions;
 using Application;
 using Infrastructure;
 using Infrastructure.Configuration;
@@ -35,6 +36,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.UseGlobalExceptionHandler();
 
 app.UseHttpsRedirection();
 
