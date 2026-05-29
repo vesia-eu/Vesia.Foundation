@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Vesia.Foundation</id>
+    <version>1.0.0</version>
+    <title>Vesia Foundation</title>
+    <authors>Vesia</authors>
+    <description>A .NET solution template built on Clean Architecture, CQRS, and DDD — powered by Vesia.Dispatch.</description>
+    <tags>dotnet-new template clean-architecture cqrs ddd Vesia dispatch dotnet10</tags>
+	<license type="expression">MIT</license>
+	<readme>docs/README.md</readme>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+  	<file src="README.md" target="docs/" />
+	<file src="Content\**" target="content" exclude="Content\**\bin\**;Content\**\obj\**;Content\**\.DS_Store;Content\**\.idea\**;Content\**\*.user" />
+  </files>
+</package>

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Tests/">
+    <Project Path="Tests\Vesia.Template.Application.Tests\Vesia.Template.Application.Tests.csproj" />
+    <Project Path="Tests\Vesia.Template.Domain.Tests\Vesia.Template.Domain.Tests.csproj" />
+  </Folder>
+  <Project Path="Vesia.Template.API\Vesia.Template.API.csproj" />
+  <Project Path="Vesia.Template.Application\Vesia.Template.Application.csproj" />
+  <Project Path="Vesia.Template.Domain\Vesia.Template.Domain.csproj" />
+  <Project Path="Vesia.Template.Infrastructure\Vesia.Template.Infrastructure.csproj" />
+</Solution>

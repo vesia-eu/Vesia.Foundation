@@ -1,6 +1,6 @@
-# Venly.Foundation
+# Vesia.Foundation
 
-A .NET 10 solution template built on **Clean Architecture**, **CQRS**, and **DDD** — powered by [Venly.Dispatch](https://www.nuget.org/packages/Venly.Dispatch).
+A .NET 10 solution template built on **Clean Architecture**, **CQRS**, and **DDD** — powered by [Vesia.Dispatch](https://www.nuget.org/packages/Vesia.Dispatch).
 
 Scaffold a fully structured, production-ready solution in one command.
 
@@ -15,13 +15,13 @@ Scaffold a fully structured, production-ready solution in one command.
 ## Installation
 
 ```bash
-dotnet new install Venly.Foundation
+dotnet new install Vesia.Foundation
 ```
 
 ## Usage
 
 ```bash
-dotnet new venly-foundation -n MyProject
+dotnet new Vesia-foundation -n MyProject
 ```
 
 ---
@@ -41,7 +41,7 @@ MyProject.Application.Tests/
 ## What's Included
 
 - Clean Architecture layer separation with enforced dependency rules
-- CQRS via [Venly.Dispatch](https://www.nuget.org/packages/Venly.Dispatch) with command and query pipeline behaviors
+- CQRS via [Vesia.Dispatch](https://www.nuget.org/packages/Vesia.Dispatch) with command and query pipeline behaviors
 - DDD building blocks — `AggregateRoot`, `Entity`, `ValueObject`, `DomainEvent`
 - Domain event dispatching via `UnitOfWork` post-save
 - `Result<T>` type with `ErrorType` for clean error handling
@@ -53,4 +53,4 @@ MyProject.Application.Tests/
 
 ## License
 
-MIT © [Venly](https://venly.eu)
+MIT © [Vesia](https://Vesia.eu)
