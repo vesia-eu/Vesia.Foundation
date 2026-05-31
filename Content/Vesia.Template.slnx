@@ -1,15 +1,15 @@
 <Solution>
-  <Folder Name="/Solution Data/">
+  <Folder Name="/solution Data/">
     <File Path="..\Vesia.Foundation.nuspec" />
   </Folder>
-  <Folder Name="/Source/">
+  <Folder Name="/src/">
     <Project Path="src/Vesia.Template.API/Vesia.Template.API.csproj" />
     <Project Path="src/Vesia.Template.Application/Vesia.Template.Application.csproj" />
     <Project Path="src/Vesia.Template.Domain/Vesia.Template.Domain.csproj" />
     <Project Path="src/Vesia.Template.Infrastructure/Vesia.Template.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/Tests/">
-    <Project Path="Tests\Vesia.Template.Application.Tests\Vesia.Template.Application.Tests.csproj" />
-    <Project Path="Tests\Vesia.Template.Domain.Tests\Vesia.Template.Domain.Tests.csproj" />
+  <Folder Name="/tests/">
+    <Project Path="tests\Vesia.Template.Application.Tests\Vesia.Template.Application.Tests.csproj" />
+    <Project Path="tests\Vesia.Template.Domain.Tests\Vesia.Template.Domain.Tests.csproj" />
   </Folder>
 </Solution>
