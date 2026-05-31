@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Vesia.Foundation</id>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
     <title>Vesia Foundation</title>
     <authors>Vesia</authors>
     <description>A .NET solution template built on Clean Architecture, CQRS, and DDD — powered by Vesia.Dispatch.</description>

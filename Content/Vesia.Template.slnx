@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Data/">
+    <File Path="..\Vesia.Foundation.nuspec" />
+  </Folder>
   <Folder Name="/Source/">
     <Project Path="src/Vesia.Template.API/Vesia.Template.API.csproj" />
     <Project Path="src/Vesia.Template.Application/Vesia.Template.Application.csproj" />
