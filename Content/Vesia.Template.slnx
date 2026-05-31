@@ -8,7 +8,7 @@
     <Project Path="src/Vesia.Template.Domain/Vesia.Template.Domain.csproj" />
     <Project Path="src/Vesia.Template.Infrastructure/Vesia.Template.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/tests/">
+  <Folder Name="/Tests/">
     <Project Path="tests\Vesia.Template.Application.Tests\Vesia.Template.Application.Tests.csproj" />
     <Project Path="tests\Vesia.Template.Domain.Tests\Vesia.Template.Domain.Tests.csproj" />
   </Folder>
