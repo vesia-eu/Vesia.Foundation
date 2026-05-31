@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Vesia.Template.Domain\Vesia.Template.Domain.csproj" />
       <ProjectReference Include="..\..\Vesia.Template.Domain\Vesia.Template.Domain.csproj" />
     </ItemGroup>
 

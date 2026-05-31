@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Vesia.Template.Application\Vesia.Template.Application.csproj" />
+      <ProjectReference Include="..\..\src\Vesia.Template.Application\Vesia.Template.Application.csproj" />
     </ItemGroup>
 
 </Project>
