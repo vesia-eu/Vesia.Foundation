@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <PackageReference Include="Vesia.Dispatch" Version="0.1.0" />
+      <PackageReference Include="Vesia.Result" Version="0.1.1" />
     </ItemGroup>
 
 </Project>
