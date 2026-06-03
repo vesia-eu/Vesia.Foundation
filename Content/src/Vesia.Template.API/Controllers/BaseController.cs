@@ -1,4 +1,4 @@
-using Vesia.Template.Application.Common;
+using Vesia.Result;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Vesia.Template.API.Controllers;
@@ -9,23 +9,25 @@ public abstract class BaseController : ControllerBase
 {
     protected IActionResult HandleResult<T>(Result<T> result) => result.IsSuccess
         ? Ok(result.Value)
-        : result.ErrorType switch
+        : result.Error!.ErrorType switch
         {
-            ErrorType.NotFound => NotFound(result.Error),
-            ErrorType.Validation => BadRequest(result.Error),
-            ErrorType.Conflict => Conflict(result.Error),
-            ErrorType.Unauthorized => Unauthorized(result.Error),
-            _ => Problem(result.Error)
+            ErrorType.NotFound => NotFound(result.Error.Message),
+            ErrorType.Validation => BadRequest(result.Error.Message),
+            ErrorType.Conflict => Conflict(result.Error.Message),
+            ErrorType.Unauthorized => Unauthorized(result.Error.Message),
+            ErrorType.Forbidden => Forbid(),
+            _ => Problem(result.Error.Message)
         };
     
     protected IActionResult HandleCreatedResult<T>(Result<T> result, string actionName, object? routeValues = null) => result.IsSuccess
         ? CreatedAtAction(actionName, routeValues, result.Value)
-        : result.ErrorType switch
+        : result.Error!.ErrorType switch
         {
-            ErrorType.NotFound => NotFound(result.Error),
-            ErrorType.Validation => BadRequest(result.Error),
-            ErrorType.Conflict => Conflict(result.Error),
-            ErrorType.Unauthorized => Unauthorized(result.Error),
-            _ => Problem(result.Error)
+            ErrorType.NotFound => NotFound(result.Error.Message),
+            ErrorType.Validation => BadRequest(result.Error.Message),
+            ErrorType.Conflict => Conflict(result.Error.Message),
+            ErrorType.Unauthorized => Unauthorized(result.Error.Message),
+            ErrorType.Forbidden => Forbid(),
+            _ => Problem(result.Error.Message)
         };
 }

@@ -1,6 +1,6 @@
 using Vesia.Dispatch.Interfaces;
 using Vesia.Dispatch.Interfaces.Messaging;
-using Vesia.Template.Application.Common;
+using Vesia.Result;
 using Vesia.Template.Application.Contracts.Queries;
 using Vesia.Template.Application.Features.Accounts.DTOs;
 
