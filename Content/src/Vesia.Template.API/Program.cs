@@ -17,6 +17,8 @@ var config = builder.Configuration.GetSection("AppSettings").Get<AppSettings>()
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddControllers();
+
 // Add Vesia.Dispatch to Register all Command- and QueryHandlers
 builder.Services.AddDispatch(options =>
 {
@@ -38,7 +40,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseGlobalExceptionHandler();
-
 app.UseHttpsRedirection();
+app.MapControllers();
 
 app.Run();
