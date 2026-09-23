@@ -7,6 +7,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Content
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
