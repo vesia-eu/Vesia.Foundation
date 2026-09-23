@@ -13,6 +13,10 @@ jobs:
       id-token: write
       contents: read
 
+    defaults:
+      run:
+        working-directory: Content
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,13 +27,14 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore
-        run: dotnet restore src/Vesia.Result
+        run: dotnet restore Vesia.Template.slnx
 
       - name: Build
-        run: dotnet build src/Vesia.Result --configuration Release --no-restore
+        run: dotnet build Vesia.Template.slnx --configuration Release --no-restore
 
       - name: Pack
-        run: dotnet pack src/Vesia.Result --configuration Release --no-build --output ./nupkg
+        working-directory: .
+        run: nuget pack Vesia.Foundation.nuspec -NoDefaultExcludes -OutputDirectory ./nupkg -Properties Configuration=Release
 
       - name: NuGet Login (OIDC)
         id: login
@@ -39,3 +44,4 @@ jobs:
 
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        working-directory: .
