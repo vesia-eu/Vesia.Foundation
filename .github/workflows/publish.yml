@@ -29,8 +29,8 @@ jobs:
       - name: Restore
         run: dotnet restore Vesia.Template.slnx
 
-      - name: Build
-        run: dotnet build Vesia.Template.slnx --configuration Release --no-restore
+      - name: Setup NuGet CLI
+        uses: NuGet/setup-nuget@v2
 
       - name: Pack
         working-directory: .
