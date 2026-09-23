@@ -1,6 +1,6 @@
 using Vesia.Template.Application.Common;
 using Vesia.Template.Domain.Abstractions;
-using Vesia.Dispatch.Interfaces;
+using Vesia.Dispatch;
 
 namespace Vesia.Template.Infrastructure.Persistence;
 

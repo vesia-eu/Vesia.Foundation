@@ -3,7 +3,6 @@ using Vesia.Template.Application;
 using Vesia.Template.Infrastructure;
 using Vesia.Template.Infrastructure.Configuration;
 using Vesia.Dispatch;
-using Vesia.Dispatch.Enums;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,13 +17,6 @@ var config = builder.Configuration.GetSection("AppSettings").Get<AppSettings>()
 builder.Services.AddOpenApi();
 
 builder.Services.AddControllers();
-
-// Add Vesia.Dispatch to Register all Command- and QueryHandlers
-builder.Services.AddDispatch(options =>
-{
-    options.CommandLogging = LoggingMode.All;
-    options.QueryLogging = LoggingMode.OptIn;
-});
 
 // Add Application Services
 builder.Services.AddApplication();

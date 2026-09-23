@@ -1,7 +1,7 @@
 using Vesia.Template.Application.Features.Accounts.Commands;
 using Vesia.Template.Application.Features.Accounts.Queries;
 using Microsoft.AspNetCore.Mvc;
-using Vesia.Dispatch.Interfaces;
+using Vesia.Dispatch;
 using Vesia.Template.API.Requests.Accounts;
 
 
