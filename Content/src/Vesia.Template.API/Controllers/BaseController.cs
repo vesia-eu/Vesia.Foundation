@@ -9,7 +9,7 @@ public abstract class BaseController : ControllerBase
 {
     protected IActionResult HandleResult<T>(Result<T> result) => result.IsSuccess
         ? Ok(result.Value)
-        : result.Error!.ErrorType switch
+        : result.Error!.Type switch
         {
             ErrorType.NotFound => NotFound(result.Error.Message),
             ErrorType.Validation => BadRequest(result.Error.Message),
@@ -21,7 +21,7 @@ public abstract class BaseController : ControllerBase
     
     protected IActionResult HandleCreatedResult<T>(Result<T> result, string actionName, object? routeValues = null) => result.IsSuccess
         ? CreatedAtAction(actionName, routeValues, result.Value)
-        : result.Error!.ErrorType switch
+        : result.Error!.Type switch
         {
             ErrorType.NotFound => NotFound(result.Error.Message),
             ErrorType.Validation => BadRequest(result.Error.Message),

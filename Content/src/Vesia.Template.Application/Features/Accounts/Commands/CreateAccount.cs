@@ -1,7 +1,6 @@
 using Vesia.Template.Domain.AccountManagement.AggragateRoot;
 using Vesia.Template.Domain.AccountManagement.ValueObjects;
-using Vesia.Dispatch.Interfaces;
-using Vesia.Dispatch.Interfaces.Messaging;
+using Vesia.Dispatch;
 using Vesia.Template.Application.Common;
 using Vesia.Result;
 using Vesia.Template.Application.Contracts.Repositories;
